@@ -411,5 +411,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Studium
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6256768938802001035, guid: b5202eb021782a6409c913a870b39bb8, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: b5202eb021782a6409c913a870b39bb8, type: 3}
