@@ -13,7 +13,7 @@ public class BallStopChecker : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        battingResultController = GameObject.Find("GameController").GetComponent<BattingResultController>();
+        battingResultController = GameObject.Find("GameControllerCanvas").GetComponent<BattingResultController>();
         ballController = this.gameObject.GetComponent<BallController>();
         myRb = GetComponent<Rigidbody>();
     }
