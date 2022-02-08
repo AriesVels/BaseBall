@@ -22,7 +22,7 @@ public class BattingResultController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gameControllerComponent = GameObject.Find("GameController").GetComponent<GameController>();
+        gameControllerComponent = GameObject.Find("GameControllerCanvas").GetComponent<GameController>();
     }
 
     // Update is called once per frame
