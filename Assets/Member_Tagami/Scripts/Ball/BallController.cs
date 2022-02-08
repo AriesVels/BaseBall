@@ -11,7 +11,8 @@ public class BallController : MonoBehaviour
     [SerializeField] float velocityMultiplier = 1.0f;
     [SerializeField] string batTag = "Bat";
 
-    //bool canControlTrajectory = true;
+    Vector3 gizmoStartPosition;
+    Vector3 gizmoEndPosition;
 
     public bool IsHit()
     {
@@ -36,6 +37,14 @@ public class BallController : MonoBehaviour
         rb.isKinematic = true;
     }
 
+    private void OnDrawGizmos()
+    {
+        if(isHit)
+        {
+            Gizmos.DrawLine(gizmoStartPosition, gizmoEndPosition);
+        }
+    }
+
     private void OnCollisionEnter(Collision collision)
     {
         //バットなら
@@ -54,6 +63,9 @@ public class BallController : MonoBehaviour
             if (calcVelocity)
             {
                 rb.velocity = calcVelocity.GetVelocity() * velocityMultiplier;
+                //ギズモ値設定
+                gizmoStartPosition = transform.position;
+                gizmoEndPosition = transform.position + rb.velocity;
             }
             else
             {
